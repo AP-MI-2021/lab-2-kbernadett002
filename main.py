@@ -72,6 +72,8 @@ def test_is_antipalindrom():
     assert is_antipalindrom(567423)==True
 test_is_antipalindrom()
 
+def main():
+  # interfata de tip consola aici
 
 if __name__ == '__main__':
   main()
