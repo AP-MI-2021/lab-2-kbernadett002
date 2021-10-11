@@ -5,6 +5,16 @@ def print_menu():
     print("4. Iesire")
 
 
+def citire_nr():
+    n=int(input("Dati numarul"))
+    return n
+
+
+def citire_pasi():
+    n=int(input("Dati nr de pasi"))
+    return n
+
+
 def is_palindrome(n):
     '''
     Determina daca un nr este palindrom
@@ -86,13 +96,16 @@ def main():
     test_is_antipalindrome()
     while True:
         print_menu()
-        n = int(input("Dati un nr:"))
-        optiune=("Dati optiunea:")
+        optiune=input("Dati optiunea:")
         if optiune=='1':
+            n = citire_nr()
             print(is_palindrome(n))
         elif optiune=='2':
-            print(get_newton_sqrt(n))
+            n = citire_nr()
+            pasi=citire_pasi()
+            print(get_newton_sqrt(n,pasi))
         elif optiune=='3':
+            n = citire_nr()
             print(is_antipalindrome(n))
         elif optiune=="4":
             break
