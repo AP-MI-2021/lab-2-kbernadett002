@@ -1,3 +1,10 @@
+def print_menu():
+    print("1. is_palindrom")
+    print("2. get_newton_sqrt")
+    print("3. is_antipalindrome")
+    print("4. Iesire")
+
+
 def is_palindrome(n):
     '''
     Determina daca un nr este palindrom
@@ -19,7 +26,7 @@ def test_is_palindrome():
     assert is_palindrome(2356987) == False
     assert is_palindrome(123321) == True
 
-test_is_palindrome()
+
 
 def get_newton_sqrt(n,steps):
     '''
@@ -38,8 +45,6 @@ def test_get_newton_sqrt():
     assert get_newton_sqrt(9,3)==3.000015360039322
     assert get_newton_sqrt(56234,59)==237.13709115193262
 
-test_get_newton_sqrt()
-
 
 def invers(n):
     '''
@@ -53,6 +58,8 @@ def invers(n):
         nr_inv+=n%10
         n=n//10
     return nr_inv
+
+
 def is_antipalindrome(n):
     '''
     Verifica daca nr nostru este antipalindrom
@@ -71,17 +78,26 @@ def test_is_antipalindrome():
     assert is_antipalindrome(2783)==True
     assert is_antipalindrome(2773)==False
     assert is_antipalindrome(567423)==True
-test_is_antipalindrome()
+
 
 def main():
-  x=input('''1-is_palindrom 2-get_newtom_sqrt 3-is_antipalindrome 4-final''')
-  while x!='4':
-      if x=='1':
-          test_is_palindrome()
-      elif x=='2':
-          test_get_newton_sqrt()
-      elif x=='3':
-          test_is_antipalindrome()
+    test_is_palindrome()
+    test_get_newton_sqrt()
+    test_is_antipalindrome()
+    while True:
+        print_menu()
+        n = int(input("Dati un nr:"))
+        optiune=("Dati optiunea:")
+        if optiune=='1':
+            print(is_palindrome(n))
+        elif optiune=='2':
+            print(get_newton_sqrt(n))
+        elif optiune=='3':
+            print(is_antipalindrome(n))
+        elif optiune=="4":
+            break
+        else:
+            print("Optiune gresita!Reincercati")
 
 
 if __name__ == '__main__':
